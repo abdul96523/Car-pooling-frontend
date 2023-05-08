@@ -1,0 +1,186 @@
+.mainContainer
+{
+    background-image: url(../Assets/applicationbg.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size:contain;
+    height:100vh;
+    overflow-y: hidden;
+}
+.offerCard
+{
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px;
+    border-radius: 15px;
+    height: auto;
+}
+.nextButton
+{
+    border: none;
+    background-color: white;
+    font-weight: 800;
+    font-size: larger;
+    color: rgba(147,25,255,255);
+}
+.nextButton:disabled
+{
+    opacity:30%;
+}
+.priceInput
+{
+    width: 50%;
+    border: none;
+}
+.stops
+{
+    min-height:27vh;
+    max-height: 27vh;
+}
+.stopsInputField
+{
+    z-index: 1;
+    width: 98%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color:  rgb(136, 136, 136);
+}
+.plusButton
+{
+    background-color: transparent;
+    z-index: 2;
+    border: none;
+    margin-left: -2vw;
+    margin-bottom: 2.5vh;
+    color: rgba(147,25,255,255);
+    font-size: 1.7rem;
+    font-weight: 900;
+    line-height: 1.6rem;
+}
+.stopsInputField:focus,.selectDropDown:focus
+{
+    outline: none;
+    border-color:rgb(2, 2, 186);
+    border-bottom-width: 3px ;
+}
+.stopDiv
+{
+    display: flex;
+    flex-direction: row;
+}
+.submitButton
+{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: rgba(255,172,25,255);
+    border: none;
+    border-radius: 20px;
+}
+.user-Image
+{
+    width: 2vw;
+    height: 4vh;
+}
+.DetialsCard
+{
+    background-color: white;
+    border:none;
+    box-shadow: 0px 1px 3px 0px;
+    border-radius: 7px;
+}
+.cardTitle
+{
+    font-weight: 600;
+    color: rgb(95, 95, 95);
+}
+.imageButton
+{
+    border: none;
+    background-color: white;
+}
+.selectDropDown
+{
+    width: 90%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:2px solid rgb(136, 136, 136);
+    margin-bottom: 16px;
+}
+.selectDropDown option
+{
+    font-size: larger;
+}
+
+.stopsDiv
+{
+    width: 90%;
+    max-height: 20vh;
+    min-height: 21vh;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+    scroll-margin-bottom:end none;
+}
+.stopsDiv::-webkit-scrollbar {
+    display: none;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  width: 0;
+}
+
+.radio-toolbar label {
+    margin-right:0.5rem;
+    padding: 5px 10px;
+    font-size:0.8rem;
+    border: 1px solid rgba(147,25,255,255);
+    border-radius: 16px;
+}
+
+.radio-toolbar label:hover {
+  background-color: gray;
+  color: white;
+  border: 1px solid grey;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    font-weight: 500;
+    border: 1px solid rgba(147,25,255,255) ;
+    background-color:rgba(147,25,255,255) ;
+    color: white;
+}
+.seatsButton
+{
+    border-radius: 50%;
+}
+.radio-toolbar-seats label
+{
+    border-radius:48%;
+    font-weight: 700;
+    margin-right: 1rem;
+    color: gray;
+    border: 1px solid gray;
+}
+.logo
+{
+    width: 4vw;
+    height: 4vw;
+}
+.userImage
+{
+    width: 4vw;
+    height: 3.5vw;
+    cursor: pointer;
+}
+.iconsArea
+{
+    width: 5%;
+    padding: 0px 7px;
+}
+.rideInputArea
+{
+    width: 90%;
+}

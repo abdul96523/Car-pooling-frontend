@@ -1,0 +1,103 @@
+.bookRideOption
+{
+    padding: 0.3rem 2rem;
+    font-size: 1rem;
+    background-color: rgba(147,25,255,255);
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.offerRideOption
+{
+    padding: 0.3rem 2rem;
+    font-size: 1rem;
+    background-color: rgba(255,172,25,255);
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.rideResultsArea
+{
+    overflow: scroll;
+    max-height: 80vh;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+}
+.rideResultsArea::-webkit-scrollbar {
+    display: none;
+}
+.user-Image
+{
+    width: 3vw;
+    height: 6vh;
+    margin-top: 5px;
+}
+.DetialsCard
+{
+    background-color: white;
+    box-shadow: 0px 0px 2px 0px;
+    border-radius: 6px;
+}
+.cardTitle
+{
+    color: rgb(129, 127, 127);
+    font-weight: 500;
+}
+.cardDetails
+{
+    font-weight:500;
+}
+.menuBlock
+{
+    position:absolute;
+    margin-left: auto;
+    width:3.5cm;
+    box-shadow: 0px 1px 3px 0px;
+    z-index:2;
+}
+.menuBlock button
+{
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    background-color: white;
+    padding:0.5rem 1rem;
+    font-weight:400;
+    color: grey;
+    border: none;
+}
+.menuBlock button:hover
+{
+    background-color: rgba(147,25,255,255);
+    color: white;
+    font-weight: 500;
+}
+.historyArea
+{
+    z-index: 1;
+}
+.userName
+{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.locationIcon
+{
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size:1.7rem ;
+    color: rgba(147,25,255,255);
+    width:1.4rem;
+}
+.dotIcon
+{
+    color: rgba(147,25,255,255);
+    font-size: 1.8rem;
+    width: 1rem;
+}
+.interIcon
+{
+    color: rgb(188, 188, 188);
+    width: 0.8rem;
+}

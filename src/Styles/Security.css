@@ -1,0 +1,49 @@
+.text
+{
+    font-size: 5vw;
+    font-weight: 800;
+    font-style: italic;
+}
+.formImage
+{
+    width: 100%;
+}
+.submitButton
+{
+    color: white;
+    border-radius: 20px;
+}
+.formDetails
+{
+    margin-top: 20%;
+}
+.parentContainer
+{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.mainRow    
+{
+    height: 100vh;
+}
+.homeImage
+{
+    width: 90%;
+    height: auto;
+}
+.yellowText
+{
+    color: rgba(255,172,25,255);
+}
+.blueText
+{
+    color:rgba(147,25,255,255) 
+}
+.yellowBackground
+{
+    background-color:rgba(255,172,25,255) ;
+}
+.blueBackground
+{
+    background-color:rgba(147,25,255,255) ;
+}

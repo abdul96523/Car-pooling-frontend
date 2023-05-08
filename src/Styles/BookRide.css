@@ -1,0 +1,175 @@
+.title
+{
+    color: rgb(131, 131, 131);
+    font-weight: 500;
+}
+.bookCard
+{
+    background-color: white;
+    /* border: 1px solid rgb(94, 93, 93); */
+    box-shadow: 0px 1px 5px 0px;
+    border-radius: 15px;
+    max-height: 70vh;
+}
+.inputField
+{
+    width: 90%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color:  rgb(136, 136, 136);
+}
+.inputField:focus
+{
+    outline: none;
+    border-color:rgb(2, 2, 186);
+    border-bottom-width: 3px ;
+}
+.timeButton
+{
+    border: 2px solid black;
+    border-radius: 16px;
+    margin-right: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    background-color: white;
+    padding: 3px 10px 3px 10px;
+}
+.timeButton:focus
+{
+    font-weight: 500;
+    background-color:rgba(147,25,255,255) ;
+    color: white;
+}
+.submitButton
+{
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    padding: 4px 20px 4px 20px;
+    color: white;
+    background-color: rgba(255,172,25,255);
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+.BookedUser-Image
+{
+    width: 2vw;
+    height: 4vh;
+}
+.BookDetialsCard
+{
+    background-color: white;
+    box-shadow: 0px 1px 6px 0px;
+    border-radius:0.5rem;
+    cursor:pointer;
+}
+.cardTitle
+{
+    font-weight: 600;
+    color: rgb(75, 55, 55);
+}
+.bookButton
+{
+    font-weight: bolder;
+    height: fit-content;
+}
+.seatsValue
+{
+    font-weight: bolder;
+    margin: auto 0px;
+}
+.BooklocationIcon
+{
+    padding-left: 0px;
+    margin-left: 0px;
+    font-size:1.8rem ;
+    color: rgba(147,25,255,255);
+    width:1.7rem;
+    padding-top: 5px;
+}
+.BookdotIcon
+{
+    color: rgb(188, 188, 188);
+    width: 0.8rem;
+    margin: 0px 1px;
+    padding-left: 4px;
+}
+.interIconArea
+{
+    height:1rem;
+    padding-left: 4px;
+}
+.startDotIcon
+{
+    color: rgba(147,25,255,255);
+    width:1.1rem;
+    height: 2.1rem;
+    padding-left: 0px;
+    padding-bottom: 5px;
+}
+.matchesTitle
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(147,25,255,255)
+}
+/* toggle button */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-left: auto;
+    margin-right:1.5rem;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 1px;
+    padding-top: 1px;
+    background-color:rgba(255,172,25,255);
+    }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 23px;
+    background-color: white;
+  }
+  
+  .switch input:checked + .slider {
+    background-color:rgba(147,25,255,255);
+  }
+  
+  .switch input:focus + .slider {
+    box-shadow: 0 0 1px rgba(147,25,255,255);
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(25px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 30px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
