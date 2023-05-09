@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { storeObj } from '../../Interfaces/IReduxStore'
 import Header from '../../Components/Header'
 import RideDetailsInput from '../../Components/RideDetailsInput'
-import { Navigate, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { logOutUser } from '../../Redux/Slices/UserDetailsSlice'
 import { useIdleTimer } from 'react-idle-timer'
 
@@ -102,7 +102,7 @@ const BookRide = () => {
                                     </label>
                                 </div>
                                 <RideDetailsInput source={source} destination={destination} date={date} time={time} setSource={handleSource} setDestination={handleDestination} setTime={handleTime} setDate={handleDate} />
-                                <button className='submitButton'>Submit</button>
+                                <button className='bookSubmitButton'>Submit</button>
                             </form>
 
                         </div>

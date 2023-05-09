@@ -9,7 +9,8 @@
     /* border: 1px solid rgb(94, 93, 93); */
     box-shadow: 0px 1px 5px 0px;
     border-radius: 15px;
-    max-height: 70vh;
+    max-height:fit-content;
+   
 }
 .inputField
 {
@@ -41,16 +42,16 @@
     background-color:rgba(147,25,255,255) ;
     color: white;
 }
-.submitButton
+.bookSubmitButton
 {
-    margin-top: 2rem;
-    font-size: 1.3rem;
-    padding: 4px 20px 4px 20px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 2px 20px;
     color: white;
     background-color: rgba(255,172,25,255);
     border: none;
     border-radius: 20px;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 .BookedUser-Image
 {

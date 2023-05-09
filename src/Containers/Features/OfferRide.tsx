@@ -12,6 +12,7 @@ import Header from '../../Components/Header'
 import RideDetailsInput from '../../Components/RideDetailsInput'
 import { logOutUser } from '../../Redux/Slices/UserDetailsSlice'
 import { useIdleTimer } from 'react-idle-timer'
+import { ToastContainer, toast } from 'react-toastify'
 
 
 const OfferRide = () => {
@@ -41,6 +42,7 @@ const OfferRide = () => {
     const [seats, setSeats] = useState<number>(1)
     const [price, setPrice] = useState<number>(0)
     const [stopsWarning, setStopWarning] = useState<string | null>(null);
+    const [loader, setLoader] = useState<boolean>(false);
 
 
     const jwtToken = useSelector((store: storeObj) => store.userDetails.jwtToken)
@@ -50,22 +52,43 @@ const OfferRide = () => {
         e.preventDefault();
         if (validateStops()) {
             const offerObject = {
-                sourceId:source,
-                destinationId:destination,
+                sourceId: source,
+                destinationId: destination,
                 date,
                 time,
                 userId,
                 seats,
                 price,
-                Stops:stops
+                Stops: stops
             }
+            setLoader(true)
             offerRide(offerObject, jwtToken)
                 .then(function (response) {
-                    // console.log("order successful ", response);
-                    navigate("/home")
-
+                    toast.success('Ride offered successful', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                    console.log(response)
+                    setTimeout(() => navigate("/home"), 3000)
                 })
                 .catch(function (error) {
+                    setLoader(false)
+                    toast.error('Ride offered unsuccessful', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
                     console.log(error);
                 });
         }
@@ -171,7 +194,7 @@ const OfferRide = () => {
                                     <div className="col-6">
                                         <p className='title '>Avaliable seats</p>
                                         <div className='radio-toolbar radio-toolbar-seats'>
-                                            <input type="radio" id="1" name="seats" value="1" onClick={() => setSeats(1)} checked={seats==1?true:false}/>
+                                            <input type="radio" id="1" name="seats" value="1" onClick={() => setSeats(1)} checked={seats == 1 ? true : false} />
                                             <label htmlFor='1'>1</label>
                                             <input type="radio" id="2" name="seats" value="2" onClick={() => setSeats(2)} />
                                             <label htmlFor='2'>2</label>
@@ -181,15 +204,20 @@ const OfferRide = () => {
                                     </div>
                                     <div className="col-6 ">
                                         <p className='title '>Price</p>
-                                        <p className='fs-2 mb-0'> ₹<input type='number' className='priceInput' value={price?price:''} onChange={(e) => { setPrice(e.target.valueAsNumber) }} required /></p>
+                                        <p className='fs-2 mb-0'> ₹<input type='number' className='priceInput' value={price ? price : ''} onChange={(e) => { setPrice(e.target.valueAsNumber) }} required /></p>
                                     </div>
                                 </div>
-                                <button className='submitButton '>Submit</button>
+                                {
+                                    loader ? <div className="spinner-border mt-2 mb-3" role="status" >
+                                    </div> : <>
+                                        <button className='submitButton '>Submit</button></>
+                                }
                             </form>
                         </div>}
                     </div>
                 </div>
             </div>
+            <ToastContainer hideProgressBar={true} pauseOnFocusLoss={false} autoClose={5000} />
         </div>
     )
 }

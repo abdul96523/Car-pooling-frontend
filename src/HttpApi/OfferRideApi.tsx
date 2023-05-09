@@ -19,7 +19,6 @@ const getMatchedRides = async (matchDetails: IgetMatchedRides, jwtToken: string)
 }
 
 const offerRide = (offerObject: IofferRideDetails, jwtToken: string) => {
-    console.log(offerObject)
     return HttpPost(offerRideURL, offerObject, jwtToken)
 }
 
