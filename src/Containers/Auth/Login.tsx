@@ -110,7 +110,7 @@ const Login = () => {
                                 </p>
                                 <form className='mt-5' onSubmit={handleSubmit}>
                                     <div className="mb-3 form-floating">
-                                        <input type="text" placeholder='Enter mail Id' id="floatingInput" className="form-control" value={mail} onChange={(e) => { setEmail(e.target.value) }} required />
+                                        <input type="email" placeholder='Enter mail Id' id="floatingInput" className="form-control" value={mail} onChange={(e) => { setEmail(e.target.value) }} required />
                                         <label htmlFor='floatingInput'>Enter Email Id</label>
                                     </div>
                                     <div className='mb-3 form-floating'>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link,useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import logo from '../../Assets/logo.png'
 import home from '../../Assets/homebg.png'
@@ -11,39 +11,46 @@ import { signUp } from '../../HttpApi/AuthenticationApi'
 
 const SignUp = () => {
 
-  const navigate=useNavigate()
-  
+  const navigate = useNavigate()
+
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [confirmPassword, setConfirmPassword] = useState<string>("")
-  const [emailWarning, setEmailWarning] = useState<boolean>(false)
-  const [passwordWarning,setPasswordWarning]=useState<boolean>(false)
+  const [emailWarning, setEmailWarning] = useState<string>("")
+  const [passwordWarning, setPasswordWarning] = useState<string>("")
+  const [loader, setLoader] = useState<boolean>(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-    setEmailWarning(false)
-    setPasswordWarning(false)
-    if(password===confirmPassword)
-    {
-      const credentials={
-        mail:email,
+    setEmailWarning(x=>"")
+    setPasswordWarning("")
+    if (password === confirmPassword&&email.length<20&&password.length>7) {
+      const credentials = {
+        mail: email,
         password
       }
-      try{
-        const response=await signUp(credentials)
-        if(response.status==200)navigate("/")
+      setLoader(true)
+      try {
+       const response = await signUp(credentials)
+       if (response.status == 200) navigate("/")
       }
-      catch(error:any)
-      {
+      catch (error: any) {
         console.log(error)
-        setEmailWarning(true)
+        setLoader(false)
+        setEmailWarning(x=>"Email already exist!!")
       }
     }
-    else setPasswordWarning(true)
+    else if(email.length>=20)
+    {
+      setEmailWarning(x=>"Invalid email length!!")
+    }
+    else if(password!==confirmPassword) setPasswordWarning(x=>"Password not matched!!")
+    else if(password.length<8)setPasswordWarning(x=>"Password too weak !!")
   }
-    
+
+
   return (
-  <>
+    <>
       <div className='container-fluid parentContainer' >
         <div className='row mainRow'>
           <div className='col-8 ps-5 pt-3' >
@@ -77,9 +84,9 @@ const SignUp = () => {
                 <hr className='w-25 m-auto text-white' style={{ borderWidth: "3px", opacity: "100" }}></hr>
                 <form className='mt-5' onSubmit={handleSubmit}>
                   <div className="mb-3 form-floating">
-                    <input type="text" placeholder='Enter Email Id' className="form-control" value={email} onChange={(e) =>{setEmail(e.target.value);setEmailWarning(false)}} required />
+                    <input type="email" placeholder='Enter Email Id' className="form-control" value={email} onChange={(e) => { setEmail(e.target.value); setEmailWarning(x=>"") }} required />
                     <label>Enter Email Id</label>
-                    {emailWarning&&<p className='text-white'>Email already exist!!</p>}
+                    {Boolean(emailWarning) && <p className='text-white'>{emailWarning}</p>}
                   </div>
                   <div className='mb-3 form-floating'>
                     <input type="password" placeholder='Enter Password' className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} required />
@@ -88,9 +95,14 @@ const SignUp = () => {
                   <div className="mb-3 form-floating">
                     <input type="password" placeholder='Confirm Password' className="form-control" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
                     <label>Confirm Password</label>
-                    {passwordWarning&&<p className='text-white'>Password not matched!!</p>}
+                    {Boolean(passwordWarning) && <p className='text-white'>{passwordWarning}</p>}
                   </div>
-                  <div className='d-flex'><button className='m-auto btn  fw-bold submitButton' style={{ backgroundColor: "rgba(147,25,255,255)" }}>Submit</button></div>
+                  {
+                    loader ? <div className='d-flex justify-content-center'><div className=" spinner-border mt-2 text-light" role="status">
+                    </div> </div>: <>
+                      <div className='d-flex'><button className='m-auto btn  fw-bold submitButton' style={{ backgroundColor: "rgba(147,25,255,255)" }}>Submit</button></div>
+                    </>
+                  }
                 </form>
                 <div>
                   <p className='text-center text-white mt-4 fs-6 mb-0 pb-0'>Already a member?<Link to="/" style={{ textDecoration: 'none' }} className='text-white text-decoration-none fs-5 fw-bold'> LOG IN</Link> </p>
